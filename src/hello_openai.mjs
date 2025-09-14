@@ -1,10 +1,12 @@
+import 'dotenv/config';
 import OpenAI from "openai";
+
 const client = new OpenAI({
-    apiKey: ""
+    apiKey: process.env.OPENAI_API_KEY
 });
 
 const response = await client.responses.create({
-    model: "gpt-5",
+    model: "gpt-5-mini",
     input: "Write a one-sentence bedtime story about a unicorn."
 });
 
